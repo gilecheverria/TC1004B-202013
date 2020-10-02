@@ -43,13 +43,20 @@ def write_image(image_data, max_value, filename_out):
             for value in row:
                 file.write(f"{value:3} ")
             file.write("\n")
-        
+
+
+def print_image_data(image_data):
+    """ Print information about the image """
+    print(f"Image width: {len(image_data[0])//3}")
+    print(f"Image height: {len(image_data)}")
+
 
 def main():
     """ Program starting point """
     filename_in = "tester-a.ppm"
     filename_out = "tester-a-n.ppm"
     image_data, max_value = load_image(filename_in)
+    print_image_data(image_data)
     image_negative(image_data, max_value)
     write_image(image_data, max_value, filename_out)
     
