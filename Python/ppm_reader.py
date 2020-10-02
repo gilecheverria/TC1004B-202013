@@ -56,9 +56,11 @@ def main():
     filename_in = "tester-a.ppm"
     filename_out = "tester-a-n.ppm"
     image_data, max_value = load_image(filename_in)
+    print(f"File: '{filename_in}' loaded successfully")
     print_image_data(image_data)
     image_negative(image_data, max_value)
     write_image(image_data, max_value, filename_out)
+    print(f"File: '{filename_out}' created successfully")
     
 
 main()
